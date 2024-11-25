@@ -1,4 +1,3 @@
-from datetime import datetime, timedelta
 from threading import Thread
 
 import cv2
@@ -7,8 +6,6 @@ from imutils.video import WebcamVideoStream
 
 from detection import FaceDetectorYunet
 from player import VideoPlayer
-
-
 
 from detection import FaceDetectorYunet
 
@@ -66,7 +63,6 @@ def main() -> None:
             break
 
     stream.stop()
-    stream.release()
     cv2.destroyAllWindows()
 
 
