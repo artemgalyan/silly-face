@@ -29,7 +29,7 @@ def main() -> None:
     stream = WebcamVideoStream()
     stream.start()
 
-    player = VideoPlayer('data/s.mp4')
+    player = VideoPlayer('data/video.mp4')
     thread = Thread(target=player.run, args=(), name='Video')
     thread.daemon = True
     thread.start()
