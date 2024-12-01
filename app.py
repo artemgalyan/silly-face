@@ -19,6 +19,13 @@ def smart_max(l: list[int]) -> int:
 
     return m
 
+def sq(item):
+    return abs((item['x2'] - item['x1']) * (item['y2'] - item['y1']))
+
+def maximum(l: list[dict]):
+    s = map(sq, l)
+    return len([x for x, y in zip(l, s) if y > 20])
+
 
 def main() -> None:
     cv2.namedWindow('X', cv2.WND_PROP_FULLSCREEN)
@@ -46,7 +53,7 @@ def main() -> None:
         if detected is None or len(detected) == 0:
             cf = 0
         else:
-            cf = len(detected)
+            cf = maximum(detected)
         
         if len(previous) < CHECK_EVERY:
             previous.append(cf)
